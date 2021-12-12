@@ -1,0 +1,30 @@
+$light: #fff
+$dark: #333
+  
+.Rating
+  display: flex
+  align-items: center
+  flex-direction: row-reverse
+  &__star
+    padding: 0 10px
+    font-size: 25px
+    position: relative
+    &:hover, &--active
+      .Rating__icon--default, ~ .Rating__star .Rating__icon--default
+        opacity: 0
+      .Rating__icon--active, ~ .Rating__star .Rating__icon--active
+        opacity: 1
+  &__icon--active
+    position: absolute
+    top: 0px
+    left: 10px
+    opacity: 0
+  @media (prefers-color-scheme: light)
+    .Rating
+      &__star
+        color: $dark
+  @media (prefers-color-scheme: dark)
+    .Rating
+      &__star
+        color: $light
+        
